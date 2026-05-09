@@ -3,11 +3,14 @@ on:
   release:
     types: [released]
 
+permissions:
+  contents: read
+
 jobs:
   publish:
     runs-on: windows-latest
     steps:
-      - uses: vedantmgoyal2009/winget-releaser@v2
+      - uses: vedantmgoyal2009/winget-releaser@4ffc7888bffd451b357355dc214d43bb9f23917e # v2
         with:
           identifier: ViGEm.ViGEmBus
           token: ${{ secrets.WINGET_TOKEN }}
